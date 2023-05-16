@@ -9,7 +9,7 @@ namespace RoleplayersToolbox {
             this.Plugin = plugin;
 
             this.Plugin.CommandManager.AddHandler("/rptbx", new CommandInfo(this.OnCommand) {
-                HelpMessage = "Open RP-TBX",
+                HelpMessage = "打开 Roleplayer 工具箱",
             });
         }
 

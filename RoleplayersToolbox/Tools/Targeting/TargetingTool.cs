@@ -44,10 +44,11 @@ namespace RoleplayersToolbox.Tools.Targeting {
             this.RightClickHook?.Dispose();
         }
 
-        public override void DrawSettings(ref bool anyChanged) {
-            anyChanged |= ImGui.Checkbox("Enable left click to examine", ref this.Config.LeftClickExamine);
-            anyChanged |= ImGui.Checkbox("Enable right click to examine", ref this.Config.RightClickExamine);
-            anyChanged |= ImGui.Checkbox("Prevent removing or changing current target", ref this.Config.KeepTarget);
+        public override void DrawSettings(ref bool anyChanged)
+        {
+            anyChanged |= ImGui.Checkbox("左键快速调查玩家", ref this.Config.LeftClickExamine);
+            anyChanged |= ImGui.Checkbox("右键快速调查玩家", ref this.Config.RightClickExamine);
+            anyChanged |= ImGui.Checkbox("锁定当前选中的玩家（请先选中目标再勾选锁定）", ref this.Config.KeepTarget);
         }
 
         private unsafe void* LeftClickDetour(void** a1, void* clickedOn, bool a3) {
