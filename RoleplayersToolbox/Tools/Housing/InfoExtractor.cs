@@ -22,6 +22,7 @@ namespace RoleplayersToolbox.Tools.Housing {
             [HousingArea.Mist] = new[] {
                 new Regex(@"\bmist\b", RegexOptions.Compiled | RegexOptions.IgnoreCase),
                 new Regex(@"\bmists\b", RegexOptions.Compiled | RegexOptions.IgnoreCase),
+                new Regex(@"\b海\b", RegexOptions.Compiled),
             },
             [HousingArea.Shirogane] = new[] {
                 new Regex(@"\bshirogane\b", RegexOptions.Compiled | RegexOptions.IgnoreCase),

@@ -61,7 +61,18 @@ namespace RoleplayersToolbox {
         internal DalamudContextMenu Menu { get; set; }
         private Commands Commands { get; }
 
-        public Plugin() {
+        public Plugin(DataManager dataManager,SigScanner sigScanner,DalamudPluginInterface pluginInterface,Framework framework,GameGui gameGui,CommandManager commandManager
+            ,ChatGui chatGui,ClientState clientState,ObjectTable objectTable)
+        {
+            this.ObjectTable = objectTable;
+            this.ChatGui = chatGui;
+            this.ClientState = clientState;
+            this.CommandManager = commandManager;
+            this.GameGui=gameGui;
+            this.Framework = framework;
+            this.Interface = pluginInterface;
+            this.DataManager = dataManager;
+            this.SigScanner = sigScanner;
             this.Config = this.Interface.GetPluginConfig() as Configuration ?? new Configuration();
             this.Common = new XivCommonBase(Hooks.PartyFinderListings);
             this.Menu = new DalamudContextMenu();
